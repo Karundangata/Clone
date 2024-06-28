@@ -1,0 +1,10 @@
+<div *ngIf="posts">
+    <h2>Posts</h2>
+    <div *ngFor="let post of posts">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.body }}</p>
+      <button (click)="toggleComments(post.id)">Show Comments</button>
+      <app-comments *ngIf="post.showComments" [postId]="post.id"></app-comments>
+    </div>
+  </div>
+  
